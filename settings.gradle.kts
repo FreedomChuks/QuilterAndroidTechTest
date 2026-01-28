@@ -21,4 +21,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "QuilterAndroidTechTest"
 include(":app")
- 
+include(":core")
+include(":feature")
+include(":core:data")
+include(":core:model")
+include(":core:network")
+include(":core:common")
+include(":core:domain")
+include(":feature:book-list")
