@@ -16,6 +16,7 @@
 
 ```
 :app → Main entry point & navigation
+:core:designsystem → Themes & color
 :core:common → NetworkResult & exceptions
 :core:domain → Business logic & interfaces
 :core:data → Repository & data mapping
