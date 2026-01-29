@@ -9,7 +9,7 @@ import com.freedom.network.safeApiCall
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-    class BooksRepositoryImpl @Inject constructor(
+class BooksRepositoryImpl @Inject constructor(
     private val networkDatasource: NetworkDatasource
 ): BooksRepository {
     override fun getBooks(): Single<NetworkResult<Books>> = safeApiCall(

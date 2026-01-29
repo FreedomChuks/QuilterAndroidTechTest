@@ -3,7 +3,6 @@ package com.freedom.book_list.component
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -21,10 +20,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.freedom.book_list.model.BookItemUi
+import com.freedom.book_list.model.BooksUi
+import com.freedom.designsystem.theme.QuilterAndroidTechTestTheme
 
 @Composable
 fun BookItem(
@@ -34,23 +36,20 @@ fun BookItem(
 ) {
     Card(
         onClick = { onBookClick(bookItemUi) },
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier,
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.background
         )
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            BookCoverImage(
+            BookCover(
                 coverUrl = bookItemUi.coverUrl,
                 contentDescription = bookItemUi.title,
             )
             Spacer(Modifier.width(12.dp))
-            BookItemDetails(
+            BookDetails(
                 title = bookItemUi.title,
                 author = bookItemUi.authorsName,
                 year = bookItemUi.firstPublishYear,
@@ -63,7 +62,7 @@ fun BookItem(
 }
 
 @Composable
-fun BookCoverImage(
+fun BookCover(
     coverUrl: String?,
     contentDescription: String?,
     modifier: Modifier = Modifier,
@@ -81,7 +80,7 @@ fun BookCoverImage(
 }
 
 @Composable
-fun BookItemDetails(
+fun BookDetails(
     modifier: Modifier = Modifier,
     title: String?,
     author: String?,
@@ -110,4 +109,62 @@ fun BookItemDetails(
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun BookItemPreview() {
+    QuilterAndroidTechTestTheme {
+        BookItem(
+            bookItemUi = BookPreviewData.getBooksUi.books[0],
+            onBookClick = {})
+    }
+}
+
+@Composable
+internal fun BookDetailsBottomSheetContent(
+    book: BookItemUi,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        BookCover(
+            coverUrl = book.coverUrl,
+            contentDescription = book.title,
+            size = 220.dp
+        )
+        Spacer(Modifier.height(16.dp))
+        BookDetails(
+            title = book.title,
+            author = book.authorsName,
+            year = book.firstPublishYear,
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+}
+object BookPreviewData {
+    val getBooksUi: BooksUi = BooksUi(books = listOf(
+        BookItemUi(
+            title = "Analytic geometry and calculus",
+            authorsName = "Thurman S. Peterson",
+            firstPublishYear = 1955,
+            coverUrl = "https://covers.openlibrary.org/b/OLID/OL58556693M-L.jpg"
+        ),
+        BookItemUi(
+            title = "No contest",
+            authorsName = "Alfie Kohn",
+            firstPublishYear = 1986,
+            coverUrl = "https://covers.openlibrary.org/b/OLID/OL1722648M-L.jpg"
+        ),
+        BookItemUi(
+            title = "Pedagogia do oprimido",
+            authorsName = "Paulo Freire",
+            firstPublishYear = 1967,
+            coverUrl = "https://covers.openlibrary.org/b/OLID/OL6781966M-L.jpg"
+        )
+    ))
 }

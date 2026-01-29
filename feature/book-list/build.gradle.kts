@@ -34,11 +34,18 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.data)
+    implementation(projects.core.designsystem)
+    implementation(projects.core.domain)
     implementation(projects.core.model)
+    implementation(projects.core.common)
 
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.android)
+
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+    implementation(libs.rxkotlin)
+    implementation(libs.retrofit.adapter.rxjava3)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -47,6 +54,7 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.composeUiBundle)
     implementation(libs.bundles.coilBundle)
+    debugImplementation(libs.androidx.compose.ui.tooling)
 
 
     testImplementation(libs.junit)
