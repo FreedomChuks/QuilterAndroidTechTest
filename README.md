@@ -29,8 +29,8 @@ MVVM with clean layered architecture. UI communicates through ViewModel using St
 
 ## Testing
 
-- **BooksViewModelTest:** 5 tests (loading, success, error states)
-- **BooksRepositoryImplTest:** 6 tests (mapping, filtering, error handling)
+- **BooksViewModelTest:** 8 tests (loading, success, error states)
+- **BooksRepositoryImplTest:** 5 tests (mapping, filtering, error handling)
 - **NetworkDataSourceImplTest:** 3 tests (API delegation & errors)
 
 ## Notes
