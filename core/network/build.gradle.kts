@@ -38,9 +38,11 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.common)
     ksp(libs.hilt.compiler)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.hilt.android)
+
 
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.okhttp.logging)

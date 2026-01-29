@@ -12,7 +12,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import javax.inject.Singleton
 import com.freedom.network.BuildConfig
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
+import java.util.concurrent.TimeUnit
 
 
 private val CONTENT_TYPE = "application/json".toMediaType()
@@ -26,6 +28,21 @@ object NetworkModule {
     fun provideJson(): Json = Json {
         isLenient = true
         ignoreUnknownKeys = true
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(): OkHttpClient {
+        val loggingLevel = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor.Level.BODY
+        } else {
+            HttpLoggingInterceptor.Level.NONE
+        }
+        return OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(HttpLoggingInterceptor().apply { level = loggingLevel })
+            .build()
     }
 
     @Provides

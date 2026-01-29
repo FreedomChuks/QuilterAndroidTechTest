@@ -20,6 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "QuilterAndroidTechTest"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":core")
 include(":feature")
