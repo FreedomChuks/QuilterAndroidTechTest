@@ -11,3 +11,9 @@ kotlin {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
     }
 }
+
+dependencies {
+    implementation(projects.core.common)
+    implementation(projects.core.model)
+    implementation(libs.rxjava)  //Todo migrate to coroutines later this should be framework-agnostic
+}
