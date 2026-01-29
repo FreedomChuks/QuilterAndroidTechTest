@@ -1,4 +1,4 @@
-package com.freedom.book_list
+package com.freedom.book_list.model
 
 data class BooksUi(
     val books: List<BookItemUi>

@@ -1,5 +1,7 @@
-package com.freedom.book_list
+package com.freedom.book_list.mapper
 
+import com.freedom.book_list.model.BookItemUi
+import com.freedom.book_list.model.BooksUi
 import com.freedom.model.Books
 import com.freedom.model.BooksItem
 
