@@ -122,7 +122,7 @@ fun BookItemPreview() {
 }
 
 @Composable
-internal fun BookDetailsBottomSheetContent(
+internal fun DetailsBottomSheetContent(
     book: BookItemUi,
     modifier: Modifier = Modifier
 ) {

@@ -2,12 +2,10 @@ package com.freedom.book_list
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
@@ -21,19 +19,16 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.freedom.book_list.component.BookDetailsBottomSheetContent
+import com.freedom.book_list.component.DetailsBottomSheetContent
 import com.freedom.book_list.component.BookItem
 import com.freedom.book_list.component.EmptyState
 import com.freedom.book_list.component.ErrorState
 import com.freedom.book_list.component.LoadingState
 import com.freedom.book_list.model.BookItemUi
-import com.freedom.book_list.model.BooksUi
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -85,7 +80,7 @@ fun BookListScreen() {
             onDismissRequest = { selectedBook = null },
             sheetState = bottomSheetState
         ) {
-            BookDetailsBottomSheetContent(book = selectedBook!!)
+            DetailsBottomSheetContent(book = selectedBook!!)
         }
     }
 }
