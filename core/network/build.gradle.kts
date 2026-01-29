@@ -1,35 +1,36 @@
+import java.util.Properties
+import kotlin.apply
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.kotlin.serialization)
     id("com.google.devtools.ksp")
+    id("kotlinx-serialization")
+}
+
+val keysProperties = Properties().apply {
+    load(rootProject.file("keys.properties").inputStream())
 }
 
 android {
-    namespace = "com.example.network"
+    namespace = "com.freedom.network"
     compileSdk {
         version = release(36)
     }
 
+    defaultConfig {
+        minSdk = 24
+        buildConfigField(
+            type ="String",
+            name ="API_BASE_URL",
+            value = "\"${keysProperties["API_BASE_URL"]}\""
+        )
+        consumerProguardFiles("consumer-rules.pro")
+    }
     buildFeatures {
         buildConfig = true
     }
 
-    defaultConfig {
-        minSdk = 24
-
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -48,6 +49,7 @@ dependencies {
 
     implementation(libs.rxjava)
     implementation(libs.retrofit.adapter.rxjava3)
+    implementation(libs.androidx.annotation.experimental)
 
     testImplementation(libs.mockk)
     testImplementation(libs.junit)

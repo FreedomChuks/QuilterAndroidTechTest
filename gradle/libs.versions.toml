@@ -24,6 +24,7 @@ rxandroid = "3.0.2"
 rxkotlin = "3.0.1"
 mockkVersion ="1.14.9"
 ksp = "2.1.21-2.0.2"
+annotation-expertimental="1.5.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -59,6 +60,8 @@ rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxandroid" }
 rxkotlin = { module = "io.reactivex.rxjava3:rxkotlin", version.ref = "rxkotlin" }
 retrofit-adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "retrofit" }
+
+androidx-annotation-experimental = { group ="androidx.annotation",name="annotation-experimental", version.ref="annotation-expertimental" }
 
 
 [plugins]

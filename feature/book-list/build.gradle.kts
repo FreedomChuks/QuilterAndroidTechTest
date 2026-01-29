@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.book_list"
+    namespace = "com.freedom.book_list"
     compileSdk {
         version = release(36)
     }

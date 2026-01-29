@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.quilterandroidtechtest"
+    namespace = "com.freedom.quilterandroidtechtest"
     compileSdk {
         version = release(36)
     }
