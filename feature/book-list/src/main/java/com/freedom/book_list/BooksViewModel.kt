@@ -8,6 +8,7 @@ import com.freedom.model.Books
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -27,7 +28,7 @@ class BooksViewModel @Inject constructor(
         _uiState.value = BooksUiState.Loading
         disposables.add(
             booksRepository.getBooks()
-                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(Schedulers.trampoline())
                 .subscribe(
                     { result -> handleResult(result) },
                     { error -> handleError(error) }

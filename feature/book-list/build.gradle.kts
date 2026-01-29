@@ -56,9 +56,11 @@ dependencies {
     implementation(libs.bundles.coilBundle)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
-
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
+
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.rxjava)
+    testImplementation(libs.androidx.core.testing)
 }
