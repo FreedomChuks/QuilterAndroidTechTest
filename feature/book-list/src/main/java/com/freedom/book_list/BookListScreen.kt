@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.freedom.book_list.component.DetailsBottomSheetContent
 import com.freedom.book_list.component.BookItem
+import com.freedom.book_list.component.DetailsBottomSheetContent
 import com.freedom.book_list.component.EmptyState
 import com.freedom.book_list.component.ErrorState
 import com.freedom.book_list.component.LoadingState

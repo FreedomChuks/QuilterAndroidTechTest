@@ -6,7 +6,6 @@ import com.freedom.common.NetworkResult
 import com.freedom.domain.BooksRepository
 import com.freedom.model.Books
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.flow.MutableStateFlow

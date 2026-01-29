@@ -116,7 +116,7 @@ fun BookDetails(
 fun BookItemPreview() {
     QuilterAndroidTechTestTheme {
         BookItem(
-            bookItemUi = BookPreviewData.getBooksUi.books[0],
+            bookItemUi = previewBooksData.books[0],
             onBookClick = {})
     }
 }
@@ -146,25 +146,11 @@ internal fun DetailsBottomSheetContent(
         )
     }
 }
-object BookPreviewData {
-    val getBooksUi: BooksUi = BooksUi(books = listOf(
-        BookItemUi(
-            title = "Analytic geometry and calculus",
-            authorsName = "Thurman S. Peterson",
-            firstPublishYear = 1955,
-            coverUrl = "https://covers.openlibrary.org/b/OLID/OL58556693M-L.jpg"
-        ),
-        BookItemUi(
-            title = "No contest",
-            authorsName = "Alfie Kohn",
-            firstPublishYear = 1986,
-            coverUrl = "https://covers.openlibrary.org/b/OLID/OL1722648M-L.jpg"
-        ),
-        BookItemUi(
-            title = "Pedagogia do oprimido",
-            authorsName = "Paulo Freire",
-            firstPublishYear = 1967,
-            coverUrl = "https://covers.openlibrary.org/b/OLID/OL6781966M-L.jpg"
-        )
-    ))
-}
+val previewBooksData: BooksUi = BooksUi(books = listOf(
+    BookItemUi(
+        title = "Analytic geometry and calculus",
+        authorsName = "Thurman S. Peterson",
+        firstPublishYear = 1955,
+        coverUrl = "https://covers.openlibrary.org/b/OLID/OL58556693M-L.jpg"
+    )
+))

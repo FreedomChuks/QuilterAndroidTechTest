@@ -12,7 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.freedom.designsystem.theme.QuilterAndroidTechTestTheme
 
 @Composable
 internal fun LoadingState(modifier: Modifier = Modifier) {
@@ -86,5 +88,32 @@ internal fun EmptyState(modifier: Modifier = Modifier) {
                 modifier = Modifier.padding(top = 8.dp)
             )
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewLoadingComponent() {
+    QuilterAndroidTechTestTheme() {
+        LoadingState()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewErrorStateComponent() {
+    QuilterAndroidTechTestTheme() {
+        ErrorState(
+            onRetry = {},
+            message = "Something went wrong"
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewEmptyStateComponent() {
+    QuilterAndroidTechTestTheme() {
+        EmptyState()
     }
 }
