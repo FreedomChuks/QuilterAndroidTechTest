@@ -33,6 +33,12 @@ MVVM with clean layered architecture. UI communicates through ViewModel using St
 - **BooksViewModelTest:** 8 tests (loading, success, error states)
 - **BooksRepositoryImplTest:** 5 tests (mapping, filtering, error handling)
 - **NetworkDataSourceImplTest:** 3 tests (API delegation & errors)
+- **UI Tests:** 15 tests covering all UI components and states
+  - BookListComponentsTest: 7 tests (Loading, Error, Empty states, BookItem)
+  - BookListContentTest: 5 tests (List rendering, interactions, data handling)
+  - MainActivityTest: 3 tests (App launch, integration)
+
+See [UI_TEST_DOCUMENTATION.md](UI_TEST_DOCUMENTATION.md) for detailed UI test documentation.
 
 ## Notes
 
@@ -45,7 +51,8 @@ MVVM with clean layered architecture. UI communicates through ViewModel using St
 
 ```bash
 ./gradlew build
-./gradlew test
+./gradlew test  # Run unit tests
+./gradlew connectedAndroidTest  # Run UI tests on device/emulator
 ./gradlew installDebug
 ```
 
