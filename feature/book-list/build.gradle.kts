@@ -7,9 +7,7 @@ plugins {
 
 android {
     namespace = "com.freedom.book_list"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
