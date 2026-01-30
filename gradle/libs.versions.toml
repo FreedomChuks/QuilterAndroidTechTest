@@ -54,6 +54,7 @@ compose-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-com
 
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 
 coil-network-kt = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 coil-kt-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
@@ -69,6 +70,9 @@ retrofit-adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", 
 
 androidx-annotation-experimental = { group ="androidx.annotation",name="annotation-experimental", version.ref="annotation-expertimental" }
 
+# Compose UI Testing
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
